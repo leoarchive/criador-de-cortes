@@ -22,14 +22,14 @@ class Cut:
         return int(self.cut.duration)
 
     def set(self):
-        print("⏳ Video está sendo carregado, isso pode demorar um pouco")
+        print("⏳ Video está sendo carregado, isso pode demorar um pouco...")
         self.cut = VideoFileClip(self.dir)
         print("🎥 Video carregado")
 
     def generation(self):
+        print("🔍 Analisando {0:.1f} até {1:.1f}...".format(self.init/60, self.end/60))
         self.cut = VideoFileClip(self.dir).subclip(self.init, self.end)
         self.cut.write_videofile("Temp/cut.mp4", self.fps, logger=None)
-        print("🪓 Corte feito inicio {0:.1f} final {1:.1f}".format(self.init/60, self.end/60))
 
     def save(self):
         self.cut = VideoFileClip(self.dir).subclip(self.init, self.end)
