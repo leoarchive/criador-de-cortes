@@ -1,0 +1,11 @@
+{
+    "video-directory":"directory/video.mp4",
+    "fps":30,
+    "keywords":
+    [
+        "palavras", "polêmicas"
+    ],
+    "cut-time":120,
+    "init-cuts": 400,
+    "init-items": 0
+}
