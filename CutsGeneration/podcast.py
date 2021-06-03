@@ -53,16 +53,14 @@ class Cut:
         print("🖼️ Thumbnail salva")
 
     def contain(self):
-        contain = False
         for word in self.list:
             with open(self.text, 'r') as a:
                 for line in a:
                     line = line.strip('\n')
-                    if contain == False:
-                        if word in line.split():
-                            self.frame = line.split()
-                            print("✔️ Keyword encontrada")
-                            return True
+                    if word in line.split():
+                        self.frame = line.split()
+                        print("✔️ Keyword encontrada")
+                        return True
         print("❌ Keyword não encontrada")                    
         return False                    
                                     

@@ -22,7 +22,7 @@ while i <= d:
         c.end += time
         if c.end > d:
             c.end = d
-        elif c.init < 0: 
+        if c.init < 0: 
             c.init = 0 
         cut.thumb(c)    
         cut.save(c)
