@@ -4,12 +4,7 @@ Se você deseja ganhar muito dinheiro com o conteúdo de terceiros e ao mesmo te
 
 Com o gerador de cortes você pode criar cortes e thumbnails automaticamente a partir de algumas keywords 
 
-Basta baixar o video, colocar o link do diretório dentro do arquivo json:
-
-```
-"video-directory": "directory/video.mp4",
-```
-keywords:
+Basta colocar as keywords no arquivo json:
 ``` 
 "keywords":
     [
@@ -17,15 +12,18 @@ keywords:
     ],
 ```
 
-e executar. 
+executar 
 
 ```
 python cuts.py
 ```
 
+e colocar o link do vídeo.
+
 Você também precisa: 
 ```
 pip install SpeechRecognition 
+pip install pytube3
 pip install moviepy
 ```
 
