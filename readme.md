@@ -18,7 +18,7 @@ executar
 python cuts.py
 ```
 
-e colocar o link do vídeo.
+e colar o link do vídeo.
 
 Você também precisa: 
 ```
