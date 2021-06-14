@@ -1,5 +1,4 @@
 from CutsGeneration.podcast import Video
-from pytube import YouTube
 import json
 
 
