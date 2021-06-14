@@ -1,9 +1,9 @@
 {
-    "video-directory":"Videos/directory.mp4",
+    "extension":".mp4",
     "fps":30,
     "keywords":
     [
-        "Luciana", "Lucas"
+        "palavras", "polemias", "que", "foram", "ditas"
     ],
     "cut-time":120,
     "init-cuts": 400,

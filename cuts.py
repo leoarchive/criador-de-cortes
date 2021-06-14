@@ -1,32 +1,33 @@
-from CutsGeneration import podcast
+from CutsGeneration.podcast import Video
+from pytube import YouTube
 import json
 
 
 with open('config.json') as f:
     config = json.load(f)
 
-cut = podcast.Cut
-time = config["cut-time"] / 2
-c = cut
+durationCutTime = config["cut-time"] / 2
+time = config["init-cuts"]
+v = Video()
+v.set(input("Video link: "))
+videoDuration = v.duration
 
-i = config["init-cuts"]
-cut.set(c)
-d = cut.duration(c)
-while i <= d:
-    c.init = i
-    c.end = i + 40
-    cut.generation(c)
-    cut.recognized(c)
-    if cut.contain(c):
-        c.init -= time
-        c.end += time
-        if c.end > d:
-            c.end = d
-        if c.init < 0: 
-            c.init = 0 
-        cut.thumb(c)    
-        cut.save(c)
-    i += 40
-    if i + 40 > d:
-        cut.close(c)
-        break 
+
+while time <= videoDuration:
+    v.cutInitTime = time
+    v.cutEndTime = time + 40
+    v.generationCut()
+    v.recognizedVoiceCut()
+    if v.isContain():
+        v.cutInitTime -= durationCutTime
+        v.cutEndTime += durationCutTime
+        if v.cutEndTime > videoDuration:
+            v.cutEndTime = videoDuration
+        if v.cutInitTime < 0:
+            v.cutInitTime = 0
+        v.setThumb()
+        v.save()
+    time += 40
+    if time + 40 > videoDuration:
+        v.close()
+        break
