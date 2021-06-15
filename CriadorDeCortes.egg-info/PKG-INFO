@@ -1,3 +1,19 @@
+Metadata-Version: 2.1
+Name: CriadorDeCortes
+Version: 0.0.5
+Summary: Para você que deseja farmar dinheiro com conteúdo de terceiros sem precisar ter esforço algum
+Home-page: https://github.com/leozamboni/GeradorDeCortes
+Author: Leonardo Zamboni
+Author-email: leonardonunes169@gmail.com
+License: UNKNOWN
+Project-URL: Bug Tracker, https://github.com/leozamboni/GeradorDeCortes/issues
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+
 # Criador de cortes
 
 Se você deseja ganhar muito dinheiro com o conteúdo de terceiros e ao mesmo tempo compactuar com a disseminação de informações falsas e opiniões duvidosas e com a decadência da qualidade do conteúdo existente na internet, eu ajudo você!
@@ -22,3 +38,5 @@ python criarCortes.py
 ```
 ## Versões 
 v0.1 -- versão inicial
+
+

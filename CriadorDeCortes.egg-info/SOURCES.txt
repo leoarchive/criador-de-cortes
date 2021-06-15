@@ -1,0 +1,9 @@
+README.md
+setup.py
+CriadorDeCortes/__init_.py
+CriadorDeCortes/podcast.py
+CriadorDeCortes.egg-info/PKG-INFO
+CriadorDeCortes.egg-info/SOURCES.txt
+CriadorDeCortes.egg-info/dependency_links.txt
+CriadorDeCortes.egg-info/requires.txt
+CriadorDeCortes.egg-info/top_level.txt

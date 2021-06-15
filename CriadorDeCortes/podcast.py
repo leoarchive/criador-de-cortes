@@ -5,12 +5,11 @@ from pytube import YouTube
 import speech_recognition as sr
 import json
 
-
 with open('config.json') as f:
     config = json.load(f)
 
 
-class Video:
+class Archive:
     item = config["init-items"]
     fps = config["fps"]
     list = config["keywords"]
