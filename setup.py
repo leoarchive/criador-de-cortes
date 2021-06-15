@@ -1,14 +1,12 @@
 import pathlib
 import setuptools
 
-HERE = pathlib.Path(__file__).parent
-
 with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setuptools.setup(
     name="CriadorDeCortes",
-    version="0.0.5",
+    version="0.0.6",
     author="Leonardo Zamboni",
     author_email="leonardonunes169@gmail.com",
     description="Para você que deseja farmar dinheiro com conteúdo de terceiros sem precisar ter esforço algum",

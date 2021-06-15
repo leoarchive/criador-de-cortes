@@ -4,6 +4,7 @@ from moviepy.tools import verbose_print
 from pytube import YouTube
 import speech_recognition as sr
 import json
+import os
 
 with open('config.json') as f:
     config = json.load(f)
@@ -20,19 +21,25 @@ class Archive:
     def set(self, link):
         youtube = YouTube(link)
         self.dir = youtube.title + config["extension"]
-        youtube.streams.first().download()
         print("⏳ Video está sendo carregado, isso pode demorar um pouco...")
+        youtube.streams.first().download()
         self.cut = VideoFileClip(self.dir)
         self.duration = int(self.cut.duration)
         print("🎥 Video carregado")
 
     def generationCut(self):
+        dir = os.path.join("Temp")
+        if not os.path.exists(dir):
+            os.mkdir(dir)
         print("🔍 Analisando {0:.1f} até {1:.1f}...".format(
             self.cutInitTime/60, self.cutEndTime/60))
         self.cut = VideoFileClip(self.dir).subclip(self.cutInitTime, self.cutEndTime)
         self.cut.write_videofile("Temp/cut.mp4", self.fps, logger=None)
 
     def save(self):
+        dir = os.path.join("Cuts")
+        if not os.path.exists(dir):
+            os.mkdir(dir)
         self.cut = VideoFileClip(self.dir).subclip(self.cutInitTime, self.cutEndTime)
         self.cut.write_videofile(
             f"Cuts/cut{self.item}.mp4", self.fps, logger=None)
@@ -40,10 +47,14 @@ class Archive:
         print("💾 Corte salvo")
 
     def close(self):
+        os.rmdir("Temp")
         self.cut.reader.close()
         self.cut.audio.reader.close_proc()
 
     def setThumb(self):
+        dir = os.path.join("Thumbs")
+        if not os.path.exists(dir):
+            os.mkdir(dir)
         frame = (self.cutEndTime - self.cutInitTime) / 2
         self.cut.save_frame("Thumbs/thumb.png", frame)
         image = Image.open("Thumbs/thumb.png")
