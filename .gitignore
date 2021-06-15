@@ -1,3 +1,7 @@
 Temp
 Cuts
 Thumbs
+dist
+build
+*.egg-info
+.toml
